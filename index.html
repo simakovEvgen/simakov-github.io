@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SpaApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>SPA</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="app/css/reset.css">
+    <link rel="stylesheet" href="app/css/style.css">
+    <link rel="stylesheet" href="app/libs/tabs/css/tabs.css">
+    <link rel="stylesheet" href="app/libs/tabs/css/tabstyles.css">
+    <script src="app/libs/jquery.js"></script>
+    <script src="app/libs/angular.js"></script>
+    <script src="app/libs/angular-smooth-scroll.min.js"></script>
+    <script src="app/libs/scroll-sy/angular-scroll-spy.js"></script>
+    <script src="app/libs/countUp.js"></script>
+    <script src="app/libs/angular-countUp.js"></script>
+    <script src="app/libs/angular-route/angular_route.js"></script>
+
+    <script type="text/javascript" src="app/js/app.js"></script>
+</head>
+<body ng-controller="SpaAppCtrl">
+    <div class="navigation">
+        <div class="nav-box max-1200">
+            <div class="logo-block">
+                <div><img src="app/img/header-logo.png" alt="Logo"></div>
+                <div><span class="logo-text">KET</span></div>
+            </div>
+            <ul class="nav-block">
+                <li class="active-link"><a href="#" ng-click="goHome()" scroll-to="home">home</a></li>
+                <li><a href="#" scroll-to="services">services</a></li>
+                <li><a href="#" scroll-to="portfolio">portfolio</a></li>
+                <li><a href="#" scroll-to="team">about</a></li>
+                <li><a href="#" scroll-to="news">news</a></li>
+                <li><a href="#" scroll-to="contacts">contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--<div id="home" class="landing">
+        <div class="header-box max-1200">
+            <h1>WE MAKE WEBSITES</h1>
+            <a href="#" scroll-to="portfolio">START TOUR</a>
+        </div>
+    </div>
+    <div id="services" class="our-services">
+        <div class="max-1200 buttons-block">
+            <div ng-click="showPar('1')" class="btn-srvc">
+                <div><img src="app/img/service-icon-1.png" alt="WEB DESIGN"></div>
+                <h4>WEB DESIGN</h4>
+            </div>
+            <div ng-click="showPar('2')" class="btn-srvc">
+                <div><img src="app/img/service-icon-2.png" alt="GRAPHIC DESIGN"></div>
+                <h4>GRAPHIC DESIGN</h4>
+            </div>
+            <div ng-click="showPar('3')" class="btn-srvc">
+                <div><img src="app/img/service-icon-3.png" alt="PROGRAMMING"></div>
+                <h4>PROGRAMMING</h4>
+            </div>
+            <div ng-click="showPar('4')" class="btn-srvc">
+                <div><img src="app/img/service-icon-4.png" alt="PHOTOGRAPHY"></div>
+                <h4>PHOTOGRAPHY</h4>
+            </div>
+        </div>
+        <div id="tabss" class="tabs tabs-style-topline max-1200 animation-line-block">
+            <nav>
+                <ul >
+                    <li id="first" class="tab-current"><a href="#section-topline-1" ><span>&nbsp;</span></a></li>
+                    <li class=""><a href="#section-topline-2" ><span>&nbsp;</span></a></li>
+                    <li class=""><a href="#section-topline-3" ><span>&nbsp;</span></a></li>
+                    <li id="last"><a href="#section-topline-4" ><span>&nbsp;</span></a></li>
+                </ul>
+            </nav>
+            <div ng-switch on="showP" class="max-1200">
+                <section ng-switch-when="1"><p>A communi observantia non est recedendum. Fabio vel iudice vincam, sunt in culpa qui officia. Inmensae subtilitatis, obscuris et malesuada fames. Ambitioni dedisse scripsisse iudicaretur. Tu quoque, Brute, fili mi, nihil timor populi, nihil! Idque Caesaris facere voluntate liceret: sese habere.
+                    Donec sed odio operae, eu vulputate felis rhoncus. Curabitur blandit tempus ardua ridiculus sed magna. Nihil hic munitissimus habendi senatus locus, nihil horum? Integer legentibus erat a ante historiarum dapibus.</p></section>
+                <section ng-switch-when="2"><p>Magna pars studiorum, prodita quaerimus. Paullum deliquit, ponderibus modulisque suis ratio utitur. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Cras mattis iudicium purus sit amet fermentum. Prima luce, cum quibus mons aliud consensu ab eo.
+                    Nihil hic munitissimus habendi senatus locus, nihil horum? Petierunt uti sibi concilium totius Galliae in diem certam indicere. Pellentesque habitant morbi tristique senectus et netus. Quae vero auctorem tractata ab fiducia dicuntur.</p></section>
+                <section ng-switch-when="3"><p>Ab illo tempore, ab est sed immemorabili. Morbi fringilla convallis sapien, id pulvinar odio volutpat. Nihil hic munitissimus habendi senatus locus, nihil horum? Phasellus laoreet lorem vel dolor tempus vehicula. Plura mihi bona sunt, inclinet, amari petere vellent.
+                    Morbi fringilla convallis sapien, id pulvinar odio volutpat. Quisque placerat facilisis egestas cillum dolore. Quisque ut dolor gravida, placerat libero vel, euismod. Quam diu etiam furor iste tuus nos eludet?</p></section>
+                <section ng-switch-when="4"><p>A communi observantia non est recedendum. Quisque ut dolor gravida, placerat libero vel, euismod. Hi omnes lingua, institutis, legibus inter se differunt. Integer legentibus erat a ante historiarum dapibus. Magna pars studiorum, prodita quaerimus.
+                    Fictum, deserunt mollit anim laborum astutumque! Quis aute iure reprehenderit in voluptate velit esse. Unam incolunt Belgae, aliam Aquitani, tertiam. Contra legem facit qui id facit quod lex prohibet. Etiam habebis sem dicantur magna mollis euismod.</p></section>
+            </div>&lt;!&ndash; /content &ndash;&gt;
+        </div>&lt;!&ndash; /tabs &ndash;&gt;
+
+    </div>
+    <div id="responsive" class="fully-responsive">
+        <div class="top-part">
+            <div class="left-side">
+                <a href="#"><span>START TOUR</span></a>
+            </div>
+            <div class="right-side">
+                <a href="#"><span id="corner">FOR ALL DEVICES</span></a>
+            </div>
+        </div>
+        <div class="bottom-part">
+            <div class="phone-side">
+                <img src="app/img/phones.png" alt="Devices">
+            </div>
+            <div class="text-side">
+                <h2>Fully Responsive</h2>
+                <p>
+                    Me non paenitet nullum festiviorem excogitasse ad hoc. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Tityre, tu patulae recubans sub tegmine fagi dolor. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque placerat facilisis egestas cillum dolore. Quo usque tandem abutere, Catilina, patientia nostra?
+                    Vivamus sagittis lacus vel augue laoreet rutrum faucibus. A communi observantia non est recedendum. Idque Caesaris facere voluntate liceret: sese habere. Fictum, deserunt mollit anim laborum astutumque!
+                </p>
+                <a href="#" scroll-to="contacts"><span>GET NOW</span></a>
+            </div>
+        </div>
+    </div>
+    <div id="portfolio" class="portfolio max-1200">
+        <div>
+            <h3>Our Portfolio</h3>
+            <hr>
+            <p>Nihil hic munitissimus habendi senatus locus, nihil horum? Salutantibus vitae elit libero, a pharetra augue. Fabio vel iudice vincam, sunt in culpa qui officia. Inmensae subtilitatis, obscuris et malesuada fames.</p>
+        </div>
+        <ul>
+            <li><a href="#"><span class="active">ALL</span></a></li>
+            <li><a href="#"><span>WEB</span></a></li>
+            <li><a href="#"><span>PHOTOGRAPHY</span></a></li>
+            <li><a href="#"><span>GRAPHIC DESIGN</span></a></li>
+        </ul>
+    </div>
+    <div id="gallery" class="gallery">
+        <ul>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+        </ul>
+        <ul class="second">
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+            <li>&nbsp;</li>
+        </ul>
+    </div>
+    <div id="statistic" class="statistic">
+        <div class="max-1200">
+            <div class="count">
+                <div><img src="app/img/stats-count-1.png" alt="Count"></div>
+                <h4 id="animation1" count-up end-val='3054' duration="3" scroll-spy-event="elementFirstScrolledIntoView" scroll-spy>0</h4>
+                <span>COMPLETED PROJECTS</span>
+            </div>
+            <div class="count">
+                <div><img src="app/img/stats-count-2.png" alt="Count"></div>
+                <h4 id="animation2" count-up end-val='7234873' duration="3" scroll-spy-event="elementFirstScrolledIntoView" scroll-spy>0</h4>
+                <span>CLICK PRESED</span>
+            </div>
+            <div class="count">
+                <div><img src="app/img/stats-count-3.png" alt="Count"></div>
+                <h4 id="animation3" count-up end-val='4670' duration="3" scroll-spy-event="elementFirstScrolledIntoView" scroll-spy>0</h4>
+                <span>MAILS SENTED & RECIVED</span>
+            </div>
+            <div class="count">
+                <div><img src="app/img/stats-count-4.png" alt="Count"></div>
+                <h4 id="animation4" count-up end-val='939' duration="3" scroll-spy-event="elementFirstScrolledIntoView" scroll-spy>0</h4>
+                <span>JOKES TOLDS</span>
+            </div>
+        </div>
+    </div>
+    <div id="team" class="team">
+        <div class="team-info">
+            <h3>We are the one</h3>
+            <hr>
+            <p>Nihil hic munitissimus habendi senatus locus, nihil horum? Salutantibus vitae elit libero, a pharetra augue. Fabio vel iudice vincam, sunt in culpa qui officia. Inmensae subtilitatis, obscuris et malesuada fames.</p>
+        </div>
+        <div class="team-block">
+            <div worker-card></div>
+            <div worker-card></div>
+            <div worker-card></div>
+            <div worker-card></div>
+        </div>
+    </div>
+    <div id="news" class="news">
+        <div class="news-info">
+            <h3>We are the one</h3>
+            <hr>
+            <p>Nihil hic munitissimus habendi senatus locus, nihil horum? Salutantibus vitae elit libero, a pharetra augue. Fabio vel iudice vincam, sunt in culpa qui officia. Inmensae subtilitatis, obscuris et malesuada fames.</p>
+        </div>
+        <div class="news-content">
+            <div ng-repeat="item in news" class="one-of-news">
+                <div class="date-block">
+                    <p>{{item.date | dateCorrect | date: 'dd'}}</p>
+                    <p>{{item.date | dateCorrect | date: 'MMMM'}}</p>
+                </div>
+                <div class="short-info-block">
+                    <div class="text-of-news">
+                        <p>{{item.text}}</p>
+                    </div>
+                    <div class="read-more-line">
+                        <a href="{{item.id}}" ng-click="goTo($index ,item.id, $event)">Read More</a>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="footer">
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <hr>
+            <p>Nihil hic munitissimus habendi senatus locus, nihil horum? Salutantibus vitae elit libero, a pharetra augue. Fabio vel iudice vincam, sunt in culpa qui officia. Inmensae subtilitatis, obscuris et malesuada fames.</p>
+        </div>
+        <form>
+            <div class="row">
+                <div><span class="tool-tip-name hide"><b>Error:</b> Just letters</span><input type="text" ng-keypress="checkerName($event)" placeholder="Yor name here"><span class="bottom-line"></span></div>
+                <div><span class="tool-tip-email hide"><b>Error:</b> Just letters, numbers and _ . @ symbols</span><input type="text" ng-keypress="checkerEmail($event)" placeholder="Yor mail here"><span class="bottom-line"></span></div>
+            </div>
+            <div class="row">
+                <div><span class="tool-tip-massage hide"><b>Error:</b> Min length 20 symbols</span><input class="massage" ng-model="massage" type="text" placeholder="Yor massage here"><span class="bottom-line"></span></div>
+            </div>
+            <div class="btn-contact">
+                <input type="submit" ng-click="checkForm()" value="Send Massage">
+            </div>
+        </form>
+    </div>
+    <div id="contacts" class="contacts">
+        <div class="blue-box">
+            <p>Awesome Address 432</p>
+            <a href="#">ourmail@sometype.com</a>
+            <p>+321(0)32 123 343 492</p>
+        </div>
+    </div>-->
+    <div ng-view></div>
+    <div class="copyright">
+        <span scroll-to="home" class="up-btn"></span>
+        <p>&copy; 2014 - <a href="#">Kat</a> All Right Reserved</p>
+    </div>
+</body>
+<script src="app/libs/tabs/js/cbpFWTabs.js"></script>
+<script>
+    /*(function() {
+
+        [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+            new CBPFWTabs( el );
+        });
+
+    })();*/
+
+    var module = angular.module("SpaApp", ['smoothScroll', 'countUpModule', 'scrollSpyModule', 'ngRoute'])
+        .config(function ($routeProvider, $locationProvider) {
+
+            $routeProvider
+                .when('/home', {
+                    templateUrl: 'app/views/home.html',
+                    controller: 'SpaAppCtrl'
+                })
+                .when('/id/:id', {
+                    templateUrl: 'app/views/news.html',
+                    controller: 'newsCtrl'
+                })
+                .otherwise({
+                    redirectTo: '/home'
+                });
+        })
+        .controller("SpaAppCtrl", function($scope, smoothScroll, $interval, $location, $http) {
+
+
+            $scope.showP = "1";
+            $scope.fucFunc = function(i, event) {
+                event.preventDefault();
+                $scope.showPar(i);
+            }
+            $scope.fucFunc2 = function(event) {
+                event.preventDefault();
+            }
+            $scope.showPar = function(i, event) {
+                $scope.showP = i;
+                var li = document.getElementById('tabss');
+                var re = li.getElementsByTagName("li")
+
+                if (i == '1'){
+                    re[0].setAttribute("class", "tab-current")
+                    re[1].removeAttribute("class", "tab-current")
+                    re[2].removeAttribute("class", "tab-current")
+                    re[3].removeAttribute("class", "tab-current")
+                }
+                if (i == '2'){
+                    re[1].setAttribute("class", "tab-current")
+                    re[0].removeAttribute("class", "tab-current")
+                    re[2].removeAttribute("class", "tab-current")
+                    re[3].removeAttribute("class", "tab-current")
+                }
+                if (i == '3'){
+                    re[2].setAttribute("class", "tab-current")
+                    re[1].removeAttribute("class", "tab-current")
+                    re[0].removeAttribute("class", "tab-current")
+                    re[3].removeAttribute("class", "tab-current")
+                }
+                if (i == '4'){
+                    re[3].setAttribute("class", "tab-current")
+                    re[1].removeAttribute("class", "tab-current")
+                    re[2].removeAttribute("class", "tab-current")
+                    re[0].removeAttribute("class", "tab-current")
+                }
+            }
+
+            $scope.news = {};
+            $scope.massage = '';
+            $scope.email = '';
+            $scope.name = '';
+            $scope.checkerName = function(event) {
+                if(event.keyCode == 92 || event.keyCode == 94 || event.keyCode == 95){
+                    $('.tool-tip-name').removeClass("hide");
+                    event.preventDefault();
+
+                }
+                if(event.keyCode < 65 || event.keyCode > 122){
+                    $('.tool-tip-name').removeClass("hide");
+                    event.preventDefault();
+                }
+                else {
+                    $('.tool-tip-name').addClass("hide");
+                }
+            };
+            $scope.checkerEmail = function(event) {
+                if(event.keyCode == 92 || event.keyCode == 94){
+                    $('.tool-tip-email').removeClass("hide");
+                    event.preventDefault();
+                }
+                if((event.keyCode < 65 || event.keyCode > 122) && (event.keyCode < 48 || event.keyCode > 57)){
+                    if(event.keyCode != 95 && event.keyCode != 64 && event.keyCode != 46){
+                        $('.tool-tip-email').removeClass("hide");
+                         event.preventDefault();
+                    }
+                }
+                else {
+                    $('.tool-tip-email').addClass("hide");
+                }
+            };
+            $scope.messageToolTip = function() {
+                $('.tool-tip-massage').addClass("hide");
+            }
+            $scope.checkForm = function() {
+                if ($scope.massage.length < 20){
+                    $('.tool-tip-massage').removeClass("hide");
+                }
+                else {
+                    $('.tool-tip-massage').addClass("hide");
+                }
+                if ($scope.massage == "" || $scope.name == "" || $scope.email == ""){
+                    alert("All fields must be filled");
+                }
+            }
+            $scope.getItems = function () {
+
+                // $http.get и другие подобные функции, возвращают объект Promise. Promise - объекты для организации работы асинхронного кода.
+                // Promise представляет результат еще не законченной асинхронной операции, которому привязаны две функции для выполнения действий после завершения операции.
+
+                var promise = $http.get("app/json/data.json");
+                //var promise = $http.get("files/foo.json"); // данный promise перейдет в состояние rejected
+                promise.then(fulfilled, rejected).then(fulfilled, rejected)
+            }
+
+            function fulfilled(response) {
+
+                /*console.log("Status: " + response.status); // status - статус код полученный от сервера
+                console.log("Type: " + response.headers("content-type")); // headers - метод для чтения заголовков ответа
+                console.log("Length: " + response.headers("content-length"));*/
+
+                $scope.news = response.data; // data - данные запроса
+                $scope.news.sort(function (a, b) {
+                    var f = new Date(a.date);
+                    var s = new Date(b.date);
+                    if (f > s) {
+                        return -1;
+                    }
+                    if (f < s) {
+                        return 1;
+                    }
+                    // a должно быть равным b
+                    return 0;
+                })
+            }
+            function rejected(error) {
+               /* console.error(error.status);
+                console.error(error.statusText);*/
+            }
+            $scope.getItems();
+
+            $scope.goTo = function(index, id, event) {
+                event.preventDefault()
+                $location.path('/id/' + id);
+            }
+            $scope.goHome = function() {
+                $location.path('/home');
+            };
+            $scope.goServ = function() {
+                $location.path('/home/#services');
+            };
+        })
+        .controller("newsCtrl", function($scope, smoothScroll, $routeParams, $http) {
+            $scope.id = $routeParams.id;
+            $scope.currentNews;
+            for (var i = 0; i<$scope.news.length; i++){
+                if ($scope.news[i].id == $scope.id){
+                    $scope.currentNews = $scope.news[i];
+                } else {
+                    continue
+                }
+            }
+        })
+        .directive('workerCard', function() {
+            return {
+                templateUrl: "app/views/worker.html",
+                replace: true
+            }
+        })
+        .filter("dateCorrect", function () {
+            return function (value) {
+                if (angular.isString(value)) {
+                    var date = new Date(value);
+                    return date
+                }  else {
+                    return value;
+                }
+            }
+
+        })
+
+</script>
+</html>

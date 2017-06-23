@@ -1,0 +1,23 @@
+<div ng-controller="newsCtrl" id="news" class="news">
+    <div class="news-info">
+        <h3>We are the one</h3>
+        <hr>
+        <p>Nihil hic munitissimus habendi senatus locus, nihil horum? Salutantibus vitae elit libero, a pharetra augue. Fabio vel iudice vincam, sunt in culpa qui officia. Inmensae subtilitatis, obscuris et malesuada fames.</p>
+    </div>
+    <div class="news-content">
+        <div class="one-of-news">
+            <div class="date-block">
+                <p>{{currentNews.date | dateCorrect | date: 'dd'}}</p>
+                <p>{{currentNews.date | dateCorrect | date: 'MMMM'}}</p>
+            </div>
+            <div class="short-info-block">
+                <div class="text-of-news">
+                    <p>{{currentNews.text}}</p>
+                </div>
+                <div class="read-more-line">
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
